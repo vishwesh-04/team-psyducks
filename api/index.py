@@ -11,7 +11,7 @@ class DocumentQueryService:
         if not api_key:
             raise ValueError("API key must be provided.")
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        self.model = genai.GenerativeModel('gemma-3-1b-it')
 
     def _get_document_content(self, document_url: str) -> List[str]:
         try:
@@ -85,7 +85,7 @@ class DocumentQueryService:
                 answers.append("An error occurred while generating the answer.")
         return answers
 
-api_key = "AIzaSyBk3BDL7yr4jcFwpCCSH9AGVVJxNVjdEf4"
+api_key = "AIzaSyCFGqpaDYplXIXrOw4Y9qn990z-44F2KUU"
 
 service = DocumentQueryService(api_key=api_key)
 
